@@ -1,0 +1,28 @@
+{
+  "name": "chasing-waves",
+  "version": "0.0.1",
+  "description": "Program made for web scrapping sites that monitoring the tide and correlated areas",
+  "main": "server.js",
+  "author": "Eduardo",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "bcrypt": "^5.0.1",
+    "chalk": "4.1.2",
+    "cheerio": "^1.0.0-rc.10",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "joi": "^17.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "momentjs": "^2.0.0",
+    "mongoose": "^6.1.5",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "redis": "^4.0.1",
+    "sequelize": "^6.12.4"
+  },
+  "devDependencies": {
+    "mocha": "^9.1.3",
+    "nodemon": "^2.0.15"
+  }
+}
