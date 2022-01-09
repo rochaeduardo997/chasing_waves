@@ -16,6 +16,10 @@ const stablishConnection = async () => {
   models.dates           = await Postgres.defineModel(connection, tbl_dates);
   models.suns            = await Postgres.defineModel(connection, tbl_suns);
   models.tides           = await Postgres.defineModel(connection, tbl_tides);
+
+  // models.full_registries.belongsTo(models.dates, { foreignKey: "fk_full_registry_id", as: 'tbl_dates' });
+  // models.full_registries.belongsTo(models.suns,  { foreignKey: "fk_full_registry_id", as: 'tbl_suns'  });
+  // models.full_registries.belongsTo(models.tides, { foreignKey: "fk_full_registry_id", as: 'tbl_tides' });
   
   const modelObjects = Object.keys(models);
   

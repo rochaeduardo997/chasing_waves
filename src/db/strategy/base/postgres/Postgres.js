@@ -71,7 +71,7 @@ class Postgres{
     }
   }
 
-  async read(query = {}){
+  async read(query = {}, include = {}){
     return await this._schema.findAll({ where: query, raw: true });
   }
 

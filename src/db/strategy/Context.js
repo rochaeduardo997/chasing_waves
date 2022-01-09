@@ -15,8 +15,8 @@ class Context{
   create(item, transaction = null){
     return this._database.create(item, transaction);
   }
-  read(query, transaction = null){
-    return this._database.read(query, transaction);
+  read(query, include = null){
+    return this._database.read(query, include);
   }
   update(id, item, transaction = null){
     return this._database.update(id, item, transaction);
