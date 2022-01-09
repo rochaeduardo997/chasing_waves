@@ -5,6 +5,9 @@
   "main": "server.js",
   "author": "Eduardo",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
   "dependencies": {
     "axios": "^0.24.0",
     "bcrypt": "^5.0.1",
