@@ -2,13 +2,18 @@ const { stablishConnection } = require('../db/index');
 
 class Tides {
   async findTodayTide(req, res){
-    const day = new Date().getDate();
-    const month = new Date().getMonth() + 1;
+    let day   = new Date().getDate();
+    let month = new Date().getMonth() + 1;
+
+    const { tomorrow: isTomorrow } = req.query;
 
     try{
       const { full_registries, dates, suns, tides } = await stablishConnection();
 
+      if(isTomorrow) day = day + 1;
+      
       let [datesResult]             = await dates.read({ day, month });
+      console.log(datesResult);
       let [fullRegistriesResult]    = await full_registries.read({  'id': datesResult.fk_full_registry_id  });
       let [sunsResult]              = await suns.read({ 'fk_full_registry_id': datesResult.fk_full_registry_id });
       let [tidesResult]             = await tides.read({ 'fk_full_registry_id': datesResult.fk_full_registry_id });
